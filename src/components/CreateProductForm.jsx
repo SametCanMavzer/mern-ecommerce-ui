@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { PlusCircle, Upload, Loader } from "lucide-react";
+import { useProductStore } from "../stores/useProductStore";
 
 const categories = ["jeans", "t-shirts", "shoes", "glasses", "jackets", "suits", "bags"];
 
@@ -14,11 +15,9 @@ const CreateProductForm = () => {
 		image: "",
 	});
 
+	const { createProduct, loading } = useProductStore();
 
-    const createProduct = async (product) => {
-        console.log("product", product);
-    }
-    const loading = false;
+
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
