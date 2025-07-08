@@ -3,6 +3,7 @@ import {  useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import CreateProductForm from "../components/CreateProductForm";
 import { useProductStore } from "../stores/useProductStore";
+import AnalyticsTab from "../components/AnalyticsTab";
 
 const tabs = [
 	{ id: "create", label: "Create Product", icon: PlusCircle },
@@ -47,11 +48,12 @@ const AdminPage = () => {
 					))}
 				</div>
         {activeTab === "create" && <CreateProductForm />}
+		{activeTab === "analytics" && <AnalyticsTab />}
     				{/*
            //? Start of Selection
     			
     				{activeTab === "products" && <ProductsList />}
-    				{activeTab === "analytics" && <AnalyticsTab />}
+    				
     				*/}
 			</div>
 		</div>
